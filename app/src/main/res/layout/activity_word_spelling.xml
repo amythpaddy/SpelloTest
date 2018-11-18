@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/word_spelling_image"
+        android:layout_width="360dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+    
+    <ImageButton
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:id="@+id/speak_btn"
+        android:elevation="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="30dp"/>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/word_spelling_image"
+        android:background="#8d84ce">
+        <Button
+            android:layout_width="188dp"
+            android:layout_height="48dp"
+            android:id="@+id/check_spelling_btn"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="28dp"
+            android:textSize="18dp"
+            android:text="CHECK"
+            android:enabled="false"
+            android:textColor="#464646"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text="SPELL THIS OBJECT"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Place the right letter tiles in\nSpell English slots and press CHECK below"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:textSize="12dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="84dp"/>
+        
+        <View
+            android:layout_width="31dp"
+            android:layout_height="2dp"
+            android:layout_centerHorizontal="true"
+            android:background="#fff"
+            android:layout_marginTop="125dp"/>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:id="@+id/word_hint_holder"
+            android:layout_marginTop="169dp"/>
+        
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/word_recognition_report_holder"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"
+        android:elevation="15dp">
+
+        <ImageView
+            android:id="@+id/report_message"
+            android:layout_width="293dp"
+            android:layout_height="66dp" />
+
+        <TextView
+            android:id="@+id/fake_spelling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:text="SPELLING"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/recognition_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:layout_toLeftOf="@id/fake_spelling"
+            android:text="RIGHT" />
+
+        <Button
+            android:id="@+id/report_ok_btn"
+            android:layout_width="118dp"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="17dp"
+            android:layout_marginRight="14dp"
+            android:elevation="8dp"
+            android:text="Next"
+            android:visibility="invisible" />
+
+        <Button
+            android:layout_width="118dp"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@id/report_ok_btn"
+            android:layout_marginBottom="17dp"
+            android:layout_marginRight="16dp"
+            android:elevation="8dp"
+            android:text="retry"
+            android:id="@+id/report_retry_btn" />
+
+        <LinearLayout
+            android:id="@+id/word_recognition_report"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

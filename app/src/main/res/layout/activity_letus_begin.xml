@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/LetUsBeginParent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00b7c2">
+
+
+    <TextView
+        android:id="@+id/LetUsBeginTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:lineSpacingExtra="8sp"
+        android:text="Place your device on the Device Holder platform"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="normal" />
+
+    <ImageView
+        android:id='@+id/LetUsBeginBracket'
+        android:layout_width="200dp"
+        android:layout_height="127dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        />
+
+    <ImageView
+        android:id='@+id/LetUsBeginCheck'
+        android:layout_width="86dp"
+        android:layout_height="76dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="72dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/LetUsBeginText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="36sp"
+        android:fontFamily="sans-serif"
+        android:textStyle="normal"
+        android:textColor="#ffffff"
+        android:text="Mark the position"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/LetUsBeginBracket"
+        android:layout_marginTop="27dp"
+        android:visibility="gone"
+        />
+    <TextView
+        android:id="@+id/LetUsBeginText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif"
+        android:textStyle="normal"
+        android:textColor="#ffffff"
+        android:gravity="center_horizontal"
+        android:text="This is the ideal position for your device on the Device Holder platform"
+        android:layout_below="@id/LetUsBeginText3"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        />
+
+
+
+    <in.smartivity.spellenglish.helper.CameraSourcePreview
+        android:id="@+id/CameraSourcePreview"
+        android:layout_width="470dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@id/LetUsBeginTitle"
+        android:layout_marginTop="22dp"
+    />
+
+    <TextView
+        android:id='@+id/LetUsBeginText1'
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LetUsBeginTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="1sp"
+        android:text="Make sure that \nThe entire LETUSBEGIN Card is seen in the VIEWER WINDOW"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/LetUsBeginText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LetUsBeginText1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:text=" If it is not, move the device left/right"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:textStyle="normal" />
+
+    <Button
+        android:id="@+id/AlignButton"
+        android:layout_width="118dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="235dp"
+        android:layout_alignTop="@id/CameraSourcePreview"
+        android:layout_centerHorizontal="true"
+        android:text="CHECK"
+        android:textStyle="normal"
+        android:textColor="#00b7c2"
+        android:textAlignment="center"
+        />
+
+    <Button
+        android:id="@+id/AlignAgainButton"
+        android:layout_width="162dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="235dp"
+        android:layout_alignTop="@id/CameraSourcePreview"
+        android:layout_centerHorizontal="true"
+        android:text="CHECK AGAIN"
+        android:textStyle="normal"
+        android:textColor="#d44f56"
+        android:textAlignment="center"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:id="@+id/NextButton"
+        android:layout_width="152dp"
+        android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:text="NEXT"
+        android:textStyle="normal"
+        android:textColor="#539309"
+        android:textAlignment="center"
+        android:layout_below="@id/LetUsBeginText4"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>
