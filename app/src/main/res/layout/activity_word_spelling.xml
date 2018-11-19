@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#555"
     android:layout_height="match_parent">
 
 
@@ -20,6 +21,15 @@
         android:elevation="15dp"
         android:layout_alignParentBottom="true"
         android:layout_margin="30dp"/>
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:elevation="1000dp"
+        android:background="#aaa"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/dummyin"
+        android:visibility="gone"/>
     
     <RelativeLayout
         android:layout_width="match_parent"
@@ -35,7 +45,7 @@
             android:layout_marginBottom="28dp"
             android:textSize="18dp"
             android:text="CHECK"
-            android:enabled="false"
+            android:enabled="true"
             android:textColor="#464646"/>
         <TextView
             android:layout_width="wrap_content"

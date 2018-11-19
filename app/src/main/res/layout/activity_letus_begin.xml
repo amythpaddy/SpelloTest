@@ -74,7 +74,7 @@
 
 
 
-    <in.smartivity.spellenglish.helper.CameraSourcePreview
+    <com.amyth_shekhar.spellotest.CameraSourcePreview
         android:id="@+id/CameraSourcePreview"
         android:layout_width="470dp"
         android:layout_height="250dp"

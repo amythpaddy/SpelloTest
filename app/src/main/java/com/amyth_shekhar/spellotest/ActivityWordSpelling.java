@@ -6,10 +6,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class ActivityWordSpelling extends CameraRecogActivity {
@@ -24,6 +26,7 @@ public class ActivityWordSpelling extends CameraRecogActivity {
     ImageView wordImage,reportImage;
     RelativeLayout wordReportHolder;
     LinearLayout wordReport;
+    EditText testIn;
     private TextView reportMsg;
     private String presentWord;
 
@@ -40,12 +43,13 @@ public class ActivityWordSpelling extends CameraRecogActivity {
         reportImage = findViewById(R.id.report_message);
         reportMsg = findViewById(R.id.recognition_status);
         wordReportHolder = findViewById(R.id.word_recognition_report_holder);
+        testIn = findViewById(R.id.dummyin);
         wordReport = findViewById(R.id.word_recognition_report);
         checkSpellingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                RecogniseSentenceSmall(presentWord.getSpelling().toLowerCase());
-//                checkSpellingBtn.setEnabled(false);
+                RecogniseSentenceSmall(presentWord);
+//                showWordRecogReport(testIn.getText().toString() , presentWord);
             }
         });
         initializeNextWord();
@@ -91,6 +95,7 @@ public class ActivityWordSpelling extends CameraRecogActivity {
 //            wordDb = realm.where(SpellEnglishWordDatabase.class).equalTo("Spelling", presentWord.getSpelling()).findFirst();
 //            wordImage.setImageDrawable(SpellEnglishHelper.getImageResource(this, wordDb.getImage()));
             presentWord = SpelloData.getSpellings();
+            Toast.makeText(this, presentWord, Toast.LENGTH_SHORT).show();
             wordImage.setImageResource(SpelloData.getImage());
         }catch (Exception e){
             Log.e("Error",e.getMessage());}
@@ -135,52 +140,52 @@ SpelloData.updateCounter();
 
     private void populateHintHolder() {
         hintHolder.removeAllViews();
-//        for (int i = 0; i < presentWord.getSpelling().length(); i++) {
-//            View tiles = LayoutInflater.from(this).inflate(R.layout.card_character_tile, hintHolder, false);
-//            if (i == 0) {
-//                TextViewSpello textViewSpello = tiles.findViewById(R.id.character_tile);
-//                textViewSpello.setText(String.valueOf(presentWord.getSpelling().charAt(0)));
-//            }
-//            switch (presentWord.getSpelling().length()) {
-//                case 6:
-//                    params = (LinearLayout.LayoutParams) tiles.getLayoutParams();
-//                    params.width = params.width - params.width/6;
-//                    tiles.setLayoutParams(params);
-//                    break;
-//                case 7:
-//                    params = (LinearLayout.LayoutParams) tiles.getLayoutParams();
-//                    params.width = params.width - params.width/7;
-//                    tiles.setLayoutParams(params);
-//                    break;
-//                case 8:
-//                    params = (LinearLayout.LayoutParams) tiles.getLayoutParams();
-//                    params.width = params.width - params.width/8;
-//                    tiles.setLayoutParams(params);
-//                    break;
-//                case 9:
-//                     params = (LinearLayout.LayoutParams) tiles.getLayoutParams();
-//                    params.width = params.width - params.width/9;
-//                    tiles.setLayoutParams(params);
-//                    break;
-//                case 10:
-//                    /*tiles.setScaleX(0.7f);
-//                    tiles.setScaleY(0.7f);*/
-//                     params = (LinearLayout.LayoutParams) tiles.getLayoutParams();
-//                    params.width = params.width - params.width/10;
-//                    tiles.setLayoutParams(params);
-//
-//                    break;
-//                default:
-//                     params = (LinearLayout.LayoutParams) tiles.getLayoutParams();
-//                    params.weight = 0;
-//                    tiles.setLayoutParams(params);
-//
-//                    tiles.setScaleY(1f);
-//                    tiles.setScaleX(1f);
-//
-//            }
-//            hintHolder.addView(tiles, i);
-//        }
+        for (int i = 0; i < presentWord.length(); i++) {
+            View tiles = LayoutInflater.from(this).inflate(R.layout.card_character_tile, hintHolder, false);
+            if (i == 0) {
+                TextView textViewSpello = tiles.findViewById(R.id.character_tile);
+                textViewSpello.setText(String.valueOf(presentWord.charAt(0)));
+            }
+            switch (presentWord.length()) {
+                case 6:
+                    params = (LinearLayout.LayoutParams) tiles.getLayoutParams();
+                    params.width = params.width - params.width/6;
+                    tiles.setLayoutParams(params);
+                    break;
+                case 7:
+                    params = (LinearLayout.LayoutParams) tiles.getLayoutParams();
+                    params.width = params.width - params.width/7;
+                    tiles.setLayoutParams(params);
+                    break;
+                case 8:
+                    params = (LinearLayout.LayoutParams) tiles.getLayoutParams();
+                    params.width = params.width - params.width/8;
+                    tiles.setLayoutParams(params);
+                    break;
+                case 9:
+                     params = (LinearLayout.LayoutParams) tiles.getLayoutParams();
+                    params.width = params.width - params.width/9;
+                    tiles.setLayoutParams(params);
+                    break;
+                case 10:
+                    /*tiles.setScaleX(0.7f);
+                    tiles.setScaleY(0.7f);*/
+                     params = (LinearLayout.LayoutParams) tiles.getLayoutParams();
+                    params.width = params.width - params.width/10;
+                    tiles.setLayoutParams(params);
+
+                    break;
+                default:
+                     params = (LinearLayout.LayoutParams) tiles.getLayoutParams();
+                    params.weight = 0;
+                    tiles.setLayoutParams(params);
+
+                    tiles.setScaleY(1f);
+                    tiles.setScaleX(1f);
+
+            }
+            hintHolder.addView(tiles, i);
+        }
     }
 //
 
@@ -214,7 +219,7 @@ SpelloData.updateCounter();
             }
         }
         if (wordInSpello.equals(originalWord)) {
-            getNextWord();
+//            getNextWord();
             reportOkBtn.setVisibility(View.VISIBLE);
             reportMsg.setText("CORRECT");
 

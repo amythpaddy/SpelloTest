@@ -9,5 +9,4 @@
     android:textSize="30dp"
     android:text="a"
     android:layout_margin="4dp"
-    app:customFont="Roboto-Bold.ttf"
     android:textAlignment="center"/>

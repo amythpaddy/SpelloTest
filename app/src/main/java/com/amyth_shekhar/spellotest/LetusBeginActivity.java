@@ -41,10 +41,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import in.smartivity.spellenglish.helper.CameraSource;
-import in.smartivity.spellenglish.helper.CameraSourcePreview;
-import in.smartivity.spellenglish.helper.FullScreenActivity;
-
 import static org.opencv.android.Utils.bitmapToMat;
 import static org.opencv.android.Utils.matToBitmap;
 

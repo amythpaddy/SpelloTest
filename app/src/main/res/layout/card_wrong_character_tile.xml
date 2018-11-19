@@ -9,5 +9,4 @@
     android:gravity="center"
     android:text=""
     android:textColor="#fff"
-    android:textSize="35dp"
-    app:customFont="Roboto-Bold.ttf" />
+    android:textSize="35dp" />
